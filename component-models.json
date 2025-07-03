@@ -219,7 +219,7 @@
     "id": "navigation",
     "fields": [
       {
-        "component": "repeatable",
+        "component": "list",
         "name": "items",
         "label": "Level 1 Items",
         "fields": [
@@ -244,7 +244,7 @@
             "label": "Description"
           },
           {
-            "component": "repeatable",
+            "component": "list",
             "name": "children",
             "label": "Level 2 Items",
             "fields": [
@@ -269,7 +269,7 @@
                 "label": "Description"
               },
               {
-                "component": "repeatable",
+                "component": "list",
                 "name": "children",
                 "label": "Level 3 Items",
                 "fields": [
@@ -294,7 +294,7 @@
                     "label": "Description"
                   },
                   {
-                    "component": "repeatable",
+                    "component": "list",
                     "name": "children",
                     "label": "Level 4 Items",
                     "fields": [
