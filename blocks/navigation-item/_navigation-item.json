@@ -1,0 +1,53 @@
+{
+  "definitions": [
+    {
+      "title": "Navigation Item",
+      "id": "navigation-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Navigation Item",
+              "model": "navigation-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "navigation-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "label",
+          "label": "Label"
+        },
+        {
+          "component": "aem-content",
+          "name": "url",
+          "label": "Link URL"
+        },
+        {
+          "component": "reference",
+          "name": "icon",
+          "label": "Icon Image"
+        },
+        {
+          "component": "text",
+          "name": "description",
+          "label": "Description"
+        },
+        {
+          "component": "navigation-item",
+          "name": "children",
+          "label": "Child Items",
+          "multi": true
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
