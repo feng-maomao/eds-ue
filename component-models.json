@@ -214,5 +214,118 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "navigation",
+    "fields": [
+      {
+        "component": "repeatable",
+        "name": "items",
+        "label": "Level 1 Items",
+        "fields": [
+          {
+            "component": "text",
+            "name": "label",
+            "label": "Label"
+          },
+          {
+            "component": "aem-content",
+            "name": "url",
+            "label": "Link URL"
+          },
+          {
+            "component": "reference",
+            "name": "icon",
+            "label": "Icon Image"
+          },
+          {
+            "component": "text",
+            "name": "description",
+            "label": "Description"
+          },
+          {
+            "component": "repeatable",
+            "name": "children",
+            "label": "Level 2 Items",
+            "fields": [
+              {
+                "component": "text",
+                "name": "label",
+                "label": "Label"
+              },
+              {
+                "component": "aem-content",
+                "name": "url",
+                "label": "Link URL"
+              },
+              {
+                "component": "reference",
+                "name": "icon",
+                "label": "Icon Image"
+              },
+              {
+                "component": "text",
+                "name": "description",
+                "label": "Description"
+              },
+              {
+                "component": "repeatable",
+                "name": "children",
+                "label": "Level 3 Items",
+                "fields": [
+                  {
+                    "component": "text",
+                    "name": "label",
+                    "label": "Label"
+                  },
+                  {
+                    "component": "aem-content",
+                    "name": "url",
+                    "label": "Link URL"
+                  },
+                  {
+                    "component": "reference",
+                    "name": "icon",
+                    "label": "Icon Image"
+                  },
+                  {
+                    "component": "text",
+                    "name": "description",
+                    "label": "Description"
+                  },
+                  {
+                    "component": "repeatable",
+                    "name": "children",
+                    "label": "Level 4 Items",
+                    "fields": [
+                      {
+                        "component": "text",
+                        "name": "label",
+                        "label": "Label"
+                      },
+                      {
+                        "component": "aem-content",
+                        "name": "url",
+                        "label": "Link URL"
+                      },
+                      {
+                        "component": "reference",
+                        "name": "icon",
+                        "label": "Icon Image"
+                      },
+                      {
+                        "component": "text",
+                        "name": "description",
+                        "label": "Description"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
