@@ -216,7 +216,7 @@
     ]
   },
   {
-    "id": "navigation-item",
+    "id": "navigation",
     "fields": [
       {
         "component": "text",
