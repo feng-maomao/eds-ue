@@ -216,10 +216,20 @@
     ]
   },
   {
-    "id": "navigation",
+    "id": "navigation-lv1",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
+        "name": "label",
+        "label": "Label"
+      }
+    ]
+  },
+  {
+    "id": "navigation-lv2",
+    "fields": [
+      {
+        "component": "richtext",
         "name": "label",
         "label": "Label"
       },
@@ -232,12 +242,31 @@
         "component": "text",
         "name": "description",
         "label": "Description"
+      }
+    ]
+  },
+  {
+    "id": "navigation-lv3",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "label",
+        "label": "Label"
       },
       {
-        "component": "text",
-        "name": "level",
-        "label": "Level",
-        "valueType": "number"
+        "component": "reference",
+        "name": "icon",
+        "label": "Icon Image"
+      }
+    ]
+  },
+  {
+    "id": "navigation-lv4",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "label",
+        "label": "Label"
       }
     ]
   }

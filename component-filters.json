@@ -16,7 +16,7 @@
       "cards",
       "columns",
       "fragment",
-      "navigation"
+      "navigation-lv1"
     ]
   },
   {
@@ -41,9 +41,21 @@
     ]
   },
   {
-    "id": "navigation",
+    "id": "navigation-lv1",
     "components": [
-      "navigation"
+      "navigation-lv2"
+    ]
+  },
+  {
+    "id": "navigation-lv2",
+    "components": [
+      "navigation-lv3"
+    ]
+  },
+  {
+    "id": "navigation-lv3",
+    "components": [
+      "navigation-lv4"
     ]
   }
 ]
