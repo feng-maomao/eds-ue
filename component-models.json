@@ -239,10 +239,10 @@
         "label": "Description"
       },
       {
-        "component": "navigation-item",
-        "name": "children",
-        "label": "Child Items",
-        "multi": true
+        "component": "text",
+        "name": "level",
+        "label": "Level",
+        "valueType": "number"
       }
     ]
   },
