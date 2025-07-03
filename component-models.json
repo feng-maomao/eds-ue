@@ -224,11 +224,6 @@
         "label": "Label"
       },
       {
-        "component": "aem-content",
-        "name": "url",
-        "label": "Link URL"
-      },
-      {
         "component": "reference",
         "name": "icon",
         "label": "Icon Image"
@@ -243,17 +238,6 @@
         "name": "level",
         "label": "Level",
         "valueType": "number"
-      }
-    ]
-  },
-  {
-    "id": "navigation",
-    "fields": [
-      {
-        "component": "navigation-item",
-        "name": "items",
-        "label": "Navigation Items",
-        "multi": true
       }
     ]
   }

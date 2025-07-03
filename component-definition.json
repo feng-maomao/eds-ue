@@ -158,21 +158,6 @@
           }
         },
         {
-          "title": "Navigation Item",
-          "id": "navigation-item",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Navigation Item",
-                  "model": "navigation-item"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Navigation",
           "id": "navigation",
           "plugins": {
@@ -182,6 +167,21 @@
                 "template": {
                   "name": "Navigation",
                   "model": "navigation"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Navigation Item",
+          "id": "navigation-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Navigation Item",
+                  "model": "navigation-item"
                 }
               }
             }

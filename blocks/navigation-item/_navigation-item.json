@@ -1,12 +1,27 @@
 {
   "definitions": [
     {
+      "title": "Navigation",
+      "id": "navigation",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Navigation",
+              "model": "navigation"
+            }
+          }
+        }
+      }
+    },
+    {
       "title": "Navigation Item",
       "id": "navigation-item",
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
+            "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Navigation Item",
               "model": "navigation-item"
@@ -24,11 +39,6 @@
           "component": "text",
           "name": "label",
           "label": "Label"
-        },
-        {
-          "component": "aem-content",
-          "name": "url",
-          "label": "Link URL"
         },
         {
           "component": "reference",
@@ -49,5 +59,10 @@
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "navigation",
+      "components": ["navigation-item"]
+    }
+  ]
 }

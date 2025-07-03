@@ -16,7 +16,6 @@
       "cards",
       "columns",
       "fragment",
-      "navigation",
       "navigation-item"
     ]
   },
@@ -39,6 +38,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "navigation",
+    "components": [
+      "navigation-item"
     ]
   }
 ]
