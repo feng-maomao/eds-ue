@@ -15,8 +15,7 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "navigation-lv1"
+      "fragment"
     ]
   },
   {
@@ -38,24 +37,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  {
-    "id": "navigation-lv1",
-    "components": [
-      "navigation-lv2"
-    ]
-  },
-  {
-    "id": "navigation-lv2",
-    "components": [
-      "navigation-lv3"
-    ]
-  },
-  {
-    "id": "navigation-lv3",
-    "components": [
-      "navigation-lv4"
     ]
   }
 ]

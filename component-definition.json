@@ -156,66 +156,6 @@
               }
             }
           }
-        },
-        {
-          "title": "Navigation Level 1",
-          "id": "navigation-lv1",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Navigation Level 1",
-                  "model": "navigation-lv1"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Navigation Level 2",
-          "id": "navigation-lv2",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Navigation Level 2",
-                  "model": "navigation-lv2"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Navigation Level 3",
-          "id": "navigation-lv3",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Navigation Level 3",
-                  "model": "navigation-lv3"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Navigation Level 4",
-          "id": "navigation-lv4",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Navigation Level 4",
-                  "model": "navigation-lv4"
-                }
-              }
-            }
-          }
         }
       ]
     }
