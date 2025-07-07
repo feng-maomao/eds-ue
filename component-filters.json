@@ -42,8 +42,6 @@
   },
   {
     "id": "navigation",
-    "components": [
-      "navigation"
-    ]
+    "components": null
   }
 ]

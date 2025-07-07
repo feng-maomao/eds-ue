@@ -21,42 +21,45 @@
             "id": "navigation",
             "fields": [
                 {
-                    "component": "richtext",
-                    "name": "label",
-                    "label": "Label"
-                },
-                {
-                    "component": "richtext",
-                    "name": "description",
-                    "label": "Description"
-                },
-                {
-                    "component": "select",
-                    "name": "level",
-                    "label": "Level",
-                    "options": [
+                    "component": "container",
+                    "name": "items",
+                    "label": "Items",
+                    "multi": true,
+                    "fields": [
                         {
-                            "name": "Level 1",
-                            "value": "1"
+                            "component": "richtext",
+                            "name": "label",
+                            "label": "Label"
                         },
                         {
-                            "name": "Level 2",
-                            "value": "2"
+                            "component": "richtext",
+                            "name": "description",
+                            "label": "Description"
                         },
                         {
-                            "name": "Level 3",
-                            "value": "3"
-                        },
-                        {
-                            "name": "Level 4",
-                            "value": "4"
+                            "component": "select",
+                            "name": "level",
+                            "label": "Level",
+                            "options": [
+                                {
+                                    "name": "Level 1",
+                                    "value": 1
+                                },
+                                {
+                                    "name": "Level 2",
+                                    "value": 2
+                                },
+                                {
+                                    "name": "Level 3",
+                                    "value": 3
+                                },
+                                {
+                                    "name": "Level 4",
+                                    "value": 4
+                                }
+                            ]
                         }
                     ]
-                },
-                {
-                    "component": "container",
-                    "name": "sub-categories",
-                    "label": "Sub Categories"
                 }
             ]
         }
@@ -64,7 +67,7 @@
     "filters": [
         {
             "id": "navigation",
-            "components": ["navigation"]
+            "components": null
         }
     ]
 }
