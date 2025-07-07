@@ -214,5 +214,48 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "navigation",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "label",
+        "label": "Label"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "select",
+        "name": "level",
+        "label": "Level",
+        "options": [
+          {
+            "name": "Level 1",
+            "value": "1"
+          },
+          {
+            "name": "Level 2",
+            "value": "2"
+          },
+          {
+            "name": "Level 3",
+            "value": "3"
+          },
+          {
+            "name": "Level 4",
+            "value": "4"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "name": "sub-categories",
+        "label": "Sub Categories"
+      }
+    ]
   }
 ]
