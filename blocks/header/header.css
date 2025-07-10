@@ -1,151 +1,167 @@
-/* header and nav layout */
+/**
+ * Header & Navigation Styles
+ * Organized structure with NEC brand colors and responsive design
+ */
+
+/* ===== BASE LAYOUT & NAVIGATION ===== */
 header .nav-wrapper {
-    background-color: var(--background-color);
-    display: flex;
-    padding: 0 80px;
-    flex-direction: column;
-    align-items: center;
+  background-color: var(--background-color);
+  display: flex;
+  padding: 0 80px;
+  flex-direction: column;
+  align-items: center;
 }
 
 header nav {
-    display: flex;
-    padding: 20px 0;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  position: relative;
 }
 
 header nav p {
-    margin: 0;
-    line-height: 1;
+  margin: 0;
+  line-height: 1;
 }
 
-/* hamburger */
-header nav .nav-hamburger {
-    grid-area: hamburger;
-    height: 22px;
-    display: flex;
-    align-items: center;
-}
-
-header nav .nav-hamburger button {
-    height: 22px;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: inherit;
-    overflow: initial;
-    text-overflow: initial;
-    white-space: initial;
-}
-
-header nav .nav-hamburger-icon,
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-    box-sizing: border-box;
-    display: block;
-    position: relative;
-    width: 20px;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
-    content: "";
-    position: absolute;
-    background: currentcolor;
-}
-
-header nav[aria-expanded="false"] .nav-hamburger-icon,
-header nav[aria-expanded="false"] .nav-hamburger-icon::before,
-header nav[aria-expanded="false"] .nav-hamburger-icon::after {
-    height: 2px;
-    border-radius: 2px;
-    background: currentcolor;
-}
-
-header nav[aria-expanded="false"] .nav-hamburger-icon::before {
-    top: -6px;
-}
-
-header nav[aria-expanded="false"] .nav-hamburger-icon::after {
-    top: 6px;
-}
-
-header nav[aria-expanded="true"] .nav-hamburger-icon {
-    height: 22px;
-}
-
-header nav[aria-expanded="true"] .nav-hamburger-icon::before,
-header nav[aria-expanded="true"] .nav-hamburger-icon::after {
-    top: 3px;
-    left: 1px;
-    transform: rotate(45deg);
-    transform-origin: 2px 1px;
-    width: 24px;
-    height: 2px;
-    border-radius: 2px;
-}
-
-header nav[aria-expanded="true"] .nav-hamburger-icon::after {
-    top: unset;
-    bottom: 3px;
-    transform: rotate(-45deg);
-}
-
-@media (width >= 900px) {
-    header nav .nav-hamburger {
-        display: none;
-        visibility: hidden;
-    }
-}
-
-/* brand */
+/* ===== BRAND SECTION ===== */
 header .nav-brand {
-    display: flex;
-    width: 124px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+  display: flex;
+  width: 124px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 header nav .nav-brand img {
-    width: auto;
-    height: 20px;
+  width: auto;
+  height: 20px;
 }
 
-/* sections */
+/* ===== NAVIGATION SECTIONS ===== */
 header nav .nav-sections {
-    display: flex;
-    align-items: center;
-    gap: 2px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 /* Navigation dropdown items */
 header nav .nav-sections .nav-drop {
-    display: block;
-    height: 40px;
-    padding: 0 16px;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  height: 40px;
+  padding: 0 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 header nav .nav-sections .nav-drop:hover {
-    background-color: var(--light-color);
+  background-color: var(--light-color);
+  border-radius: 8px;
 }
 
 header nav .nav-sections .nav-drop.nav-active {
-    background-color: #cadbff;
-    color: #0f1ed2;
+  background-color: var(--nec-sky-25);
+  color: var(--nec-blue);
+  border-radius: 8px;
 }
 
-/* Navigation mega-menu component */
+/* ===== NAVIGATION TOOLS ===== */
+header nav .nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ===== HAMBURGER MENU ===== */
+header nav .nav-hamburger {
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+}
+
+header nav .nav-hamburger button {
+  height: 22px;
+  width: 20px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: inherit;
+  overflow: initial;
+  text-overflow: initial;
+  white-space: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger icon animations */
+header nav .nav-hamburger-icon,
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after {
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  width: 20px;
+}
+
+header nav .nav-hamburger-icon::before,
+header nav .nav-hamburger-icon::after {
+  content: "";
+  position: absolute;
+  background: currentcolor;
+}
+
+/* Hamburger - closed state */
+header nav[aria-expanded="false"] .nav-hamburger-icon,
+header nav[aria-expanded="false"] .nav-hamburger-icon::before,
+header nav[aria-expanded="false"] .nav-hamburger-icon::after {
+  height: 2px;
+  border-radius: 2px;
+  background: currentcolor;
+}
+
+header nav[aria-expanded="false"] .nav-hamburger-icon::before {
+  top: -6px;
+}
+
+header nav[aria-expanded="false"] .nav-hamburger-icon::after {
+  top: 6px;
+}
+
+/* Hamburger - open state */
+header nav[aria-expanded="true"] .nav-hamburger-icon {
+  height: 22px;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon::before,
+header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+  top: 3px;
+  left: 1px;
+  transform: rotate(45deg);
+  transform-origin: 2px 1px;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+}
+
+header nav[aria-expanded="true"] .nav-hamburger-icon::after {
+  top: unset;
+  bottom: 3px;
+  transform: rotate(-45deg);
+}
+
+/* ===== MEGA MENU INTEGRATION ===== */
 header nav mega-menu {
   display: block;
   position: absolute;
-  top: calc(var(--nav-height) + 8px);
+  top: calc(var(--nav-height) + 16px);
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
@@ -156,40 +172,104 @@ header nav mega-menu {
   z-index: 1000;
 }
 
-/* Mobile navigation */
-@media (width < 900px) {
-    header nav mega-menu {
-        display: none !important;
-    }
+/* ===== ICON STYLING ===== */
 
-    header nav .nav-sections .nav-drop {
-        display: block;
-        margin: 0;
-        padding: 16px 0;
-        border-bottom: 1px solid var(--light-color);
-        line-height: 1.2;
-    }
-
-    header nav .nav-sections .nav-drop:last-child {
-        border-bottom: none;
-    }
-}
-
-/* Icon styling in navigation */
+/* Icons in navigation sections */
 header nav .nav-sections .icon {
-    display: inline-block;
-    margin-right: 8px;
-    vertical-align: middle;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 header nav .nav-sections .icon img {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
-/* tools */
-header nav .nav-tools {
+/* Icons in navigation tools */
+header nav .nav-tools .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+header nav .nav-tools .icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ===== DESKTOP RESPONSIVE ===== */
+@media (width >= 900px) {
+  header nav .nav-hamburger {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (width < 900px) {
+  /* Mobile layout adjustments */
+  header .nav-wrapper {
+    padding: 0 20px;
+  }
+  
+  header nav {
+    padding: 16px 0;
+  }
+  
+  /* Hide desktop elements */
+  header nav mega-menu {
+    display: none !important;
+  }
+
+  header nav .nav-sections {
+    display: none;
+  }
+  
+  /* Mobile layout order */
+  header nav .nav-tools {
+    order: 3;
+  }
+  
+  header nav .nav-brand {
+    order: 1;
+  }
+  
+  /* Mobile menu when expanded */
+  header nav[aria-expanded="true"] .nav-sections {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    right: -20px;
+    background: var(--nec-white);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    border-top: 1px solid var(--light-color);
+    z-index: 1000;
+    padding: 16px 0;
+  }
+  
+  header nav[aria-expanded="true"] .nav-sections .nav-drop {
+    display: flex;
+    height: 48px;
+    padding: 0 20px;
+    justify-content: flex-start;
     align-items: center;
-    gap: 2px;
+    gap: 12px;
+    border-bottom: 1px solid var(--light-color);
+  }
+  
+  header nav[aria-expanded="true"] .nav-sections .nav-drop:last-child {
+    border-bottom: none;
+  }
+  
+  header nav[aria-expanded="true"] .nav-sections .nav-drop:hover {
+    background-color: var(--light-color);
+    border-radius: 0;
+  }
 }

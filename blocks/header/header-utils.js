@@ -1,4 +1,56 @@
-export function parseHeadingStructure(section) {
+/**
+ * Convert an icon img element to inline SVG
+ * @param {HTMLElement} iconElement - Icon element containing img
+ * @returns {Promise<HTMLElement>} - Promise resolving to inline SVG element
+ */
+async function convertIconToSVG(iconElement) {
+  if (!iconElement) return null;
+
+  const img = iconElement.querySelector('img');
+  if (!img || !img.src) return iconElement;
+
+  try {
+    const response = await fetch(img.src);
+    const svgText = await response.text();
+
+    // Create a temporary div to parse the SVG
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = svgText;
+
+    const svgElement = tempDiv.querySelector('svg');
+    if (svgElement) {
+      // Create a new icon container with inline SVG
+      const newIcon = document.createElement('div');
+      newIcon.className = 'icon';
+      newIcon.appendChild(svgElement);
+      return newIcon;
+    }
+  } catch (error) {
+    console.warn('Failed to load SVG:', img.src, error);
+  }
+
+  // Return original icon if conversion fails
+  return iconElement;
+}
+
+/**
+ * Recursively convert all icons in navigation data to inline SVG
+ * @param {Array} navigationData - Array of navigation items
+ */
+async function convertIconsToSVG(navigationData) {
+  const promises = navigationData.map(async (item) => {
+    if (item.icon) {
+      item.icon = await convertIconToSVG(item.icon);
+    }
+    if (item.children && item.children.length > 0) {
+      await convertIconsToSVG(item.children);
+    }
+  });
+
+  await Promise.all(promises);
+}
+
+export async function parseHeadingStructure(section) {
   const allElements = Array.from(section.querySelectorAll('h1, h2, h3, h4, p'));
 
   const navigationData = [];
@@ -91,6 +143,9 @@ export function parseHeadingStructure(section) {
       currentLevel3.children.push(itemData);
     }
   });
+
+  // Convert all icons to inline SVG
+  await convertIconsToSVG(navigationData);
 
   return navigationData;
 }

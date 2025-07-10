@@ -43,7 +43,19 @@ function toggleMenu(nav, forceExpanded = null) {
     ? !forceExpanded
     : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = expanded || isDesktop.matches ? '' : 'hidden';
+
+  // Handle body overflow and scrollbar compensation
+  if (expanded || isDesktop.matches) {
+    // Menu is closing or we're on desktop - restore normal overflow
+    document.body.style.overflowY = '';
+    document.body.style.paddingRight = '';
+  } else {
+    // Menu is opening - prevent scrolling and compensate for scrollbar
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflowY = 'hidden';
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  }
+
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   button.setAttribute(
     'aria-label',
@@ -78,6 +90,7 @@ export default async function decorate(block) {
   // Create basic nav structure
   const classes = ['brand', 'sections', 'tools'];
   let sectionIndex = 0;
+  let navSections = null;
 
   while (fragment.firstElementChild) {
     const section = fragment.firstElementChild;
@@ -86,13 +99,9 @@ export default async function decorate(block) {
       // e.g. nav-brand, nav-sections, nav-tools
       section.classList.add(`nav-${classes[sectionIndex]}`);
 
-      // Handle nav sections with mega menu
+      // Store nav sections for later processing
       if (classes[sectionIndex] === 'sections') {
-        // Create mega menu with constructor parameters
-        const megaMenu = new MegaMenu(parseHeadingStructure(section), section);
-        nav.appendChild(megaMenu);
-        // Clear the raw section content, will be recreated by MegaMenu once added to the DOM
-        section.textContent = '';
+        navSections = section;
       }
 
       sectionIndex += 1;
@@ -101,7 +110,16 @@ export default async function decorate(block) {
     nav.appendChild(section);
   }
 
-  // hamburger for mobile
+  // Process nav sections with mega menu after the loop
+  if (navSections) {
+    const navigationData = await parseHeadingStructure(navSections);
+    const megaMenu = new MegaMenu(navigationData, navSections);
+    nav.appendChild(megaMenu);
+    // Clear the raw section content, will be recreated by MegaMenu once added to the DOM
+    navSections.textContent = '';
+  }
+
+  // hamburger for mobile - add to nav tools
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
@@ -109,7 +127,14 @@ export default async function decorate(block) {
   </button>`;
 
   hamburger.addEventListener('click', () => toggleMenu(nav));
-  nav.prepend(hamburger);
+
+  // Add hamburger to nav tools
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    navTools.appendChild(hamburger);
+  } else {
+    nav.appendChild(hamburger);
+  }
   nav.setAttribute('aria-expanded', 'false');
 
   // prevent mobile nav behavior on window resize

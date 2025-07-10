@@ -19,6 +19,15 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
+  /* NEC brand colors */
+  --nec-blue: #0F1ED2;
+  --nec-gray-10: #282D3C;
+  --nec-sky-10: #EAF0FF;
+  --nec-sky-25: #CADBFF;
+  --nec-sky-30: #C0D2FF;
+  --nec-white: #FFF;
+  --nec-gray-7: #6B7387;
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
