@@ -15,8 +15,7 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "navigation"
+      "fragment"
     ]
   },
   {
@@ -39,9 +38,5 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "navigation",
-    "components": null
   }
 ]
