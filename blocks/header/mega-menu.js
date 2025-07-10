@@ -1,5 +1,3 @@
-import { loadCSS } from '../../scripts/aem.js';
-
 /**
  * MegaMenu Web Component
  *
@@ -92,13 +90,7 @@ class MegaMenu extends HTMLElement {
     if (navSections) this.navSections = navSections;
   }
 
-  async connectedCallback() {
-    // Load component styles
-    const cssPath = `${
-      window.hlx?.codeBasePath || ''
-    }/blocks/header/mega-menu.css`;
-    await loadCSS(cssPath);
-
+  connectedCallback() {
     // Process navigation if data is available
     if (this.navData && this.navSections) {
       this.#processNavigation(this.navData, this.navSections);

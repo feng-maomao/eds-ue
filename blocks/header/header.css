@@ -1,3 +1,6 @@
+@import url('./mega-menu.css');
+@import url('./mobile-nav.css');
+
 /**
  * Header & Navigation Styles
  * Organized structure with NEC brand colors and responsive design
@@ -216,60 +219,24 @@ header nav .nav-tools .icon img {
   header .nav-wrapper {
     padding: 0 20px;
   }
-  
+
   header nav {
-    padding: 16px 0;
+    padding: 12px 0;
   }
-  
+
   /* Hide desktop elements */
   header nav mega-menu {
-    display: none !important;
+    display: none;
   }
 
   header nav .nav-sections {
-    display: none;
+    display: none; /* Hide regular nav sections on mobile */
   }
-  
-  /* Mobile layout order */
+
+
   header nav .nav-tools {
-    order: 3;
-  }
-  
-  header nav .nav-brand {
-    order: 1;
-  }
-  
-  /* Mobile menu when expanded */
-  header nav[aria-expanded="true"] .nav-sections {
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: -20px;
-    right: -20px;
-    background: var(--nec-white);
-    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
-    border-top: 1px solid var(--light-color);
-    z-index: 1000;
-    padding: 16px 0;
-  }
-  
-  header nav[aria-expanded="true"] .nav-sections .nav-drop {
-    display: flex;
-    height: 48px;
-    padding: 0 20px;
-    justify-content: flex-start;
     align-items: center;
     gap: 12px;
-    border-bottom: 1px solid var(--light-color);
-  }
-  
-  header nav[aria-expanded="true"] .nav-sections .nav-drop:last-child {
-    border-bottom: none;
-  }
-  
-  header nav[aria-expanded="true"] .nav-sections .nav-drop:hover {
-    background-color: var(--light-color);
-    border-radius: 0;
   }
 }

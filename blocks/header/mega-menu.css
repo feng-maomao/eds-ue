@@ -43,7 +43,6 @@
   padding: 10px 15px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transition: all 0.3s ease;
 }
 
@@ -56,7 +55,6 @@
   padding: 10px 15px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   transition: all 0.3s ease;
 }
 
@@ -264,6 +262,7 @@
   align-items: flex-start;
   gap: 4px;
   padding-top: 40px;
+  margin-top: auto;
 }
 
 .overview-link a {
