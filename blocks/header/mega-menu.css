@@ -1,0 +1,382 @@
+/**
+ * Header Mega Menu Styles
+ * Updated to match Figma design with NEC brand colors and layout
+ */
+
+/* stylelint-disable no-descending-specificity */
+
+/* NEC Brand Colors */
+:root {
+  --nec-blue: #0F1ED2;
+  --nec-gray-10: #282D3C;
+  --nec-sky-10: #EAF0FF;
+  --nec-sky-25: #CADBFF;
+  --nec-sky-30: #C0D2FF;
+  --nec-white: #FFF;
+  --nec-gray-7: #6B7387;
+}
+
+/* Main container styles */
+.mega-content {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  background: var(--nec-white);
+  border-radius: 8px;
+  padding: 30px;
+  gap: 16px;
+  min-height: 300px;
+  transition: all 0.3s ease;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* Left panel - Level 2 navigation */
+.mega-left {
+  flex: 0 0 250px;
+  min-width: 220px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 16px;
+}
+
+/* Middle panel - Level 3 navigation */
+.mega-middle {
+  flex: 1;
+  min-width: 220px;
+  background: var(--nec-sky-10);
+  border-radius: 8px;
+  padding: 10px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Right panel - Level 4 navigation */
+.mega-right {
+  flex: 1;
+  min-width: 220px;
+  background: var(--nec-sky-30);
+  border-radius: 8px;
+  padding: 10px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Icon styles */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Level 1 Description */
+.level1-description {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--nec-gray-10);
+  margin-bottom: 40px;
+  line-height: normal;
+}
+
+/* Level 2 Items - Base styles */
+.level2-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.level2-item .item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.level2-item .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.level2-item a {
+  color: var(--nec-gray-10);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.level2-item span {
+  color: var(--nec-gray-10);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.level2-description {
+  font-size: 14px;
+  color: var(--nec-gray-10);
+  margin: 0 16px 16px;
+  line-height: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Level 3 Container */
+.level3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  height: 164px;
+}
+
+/* Level 2 Header - Displayed at top of middle panel */
+.level2-header {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--nec-gray-10);
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+/* Level 3 Header - Displayed at top of middle panel */
+.level3-header {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--nec-gray-10);
+  line-height: normal;
+  margin-bottom: 40px;
+}
+
+/* Level 4 Container */
+.level4-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.level3-content {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.level3-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Level 3 Items - Base styles */
+.level3-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+}
+
+.level3-item .icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.level3-item span {
+  color: var(--nec-gray-10);
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.level3-item a {
+  color: var(--nec-gray-10);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.level3-item.has-level4 {
+  position: relative;
+}
+
+.level3-description {
+  font-size: 14px;
+  color: var(--nec-gray-10);
+  margin: 4px 16px 12px;
+  line-height: 20px;
+}
+
+/* Level 4 Items - Base styles */
+.level4-item {
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.level4-item a {
+  color: var(--nec-gray-10);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.level4-item span {
+  color: var(--nec-gray-10);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.level4-description {
+  font-size: 14px;
+  color: var(--nec-gray-10);
+  margin: 4px 16px 8px;
+  line-height: 20px;
+}
+
+/* Overview/Link sections */
+.overview-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  padding-top: 40px;
+}
+
+.overview-link a {
+  color: var(--nec-gray-10);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  font-size: 14px;
+  line-height: 20px;
+  transition: color 0.2s ease;
+}
+
+.overview-link a:hover {
+  color: var(--nec-blue);
+  text-decoration-color: var(--nec-blue);
+}
+
+/* Pseudo-class selectors - hover, focus, last-of-type */
+.level2-item:hover:not(.active) {
+  background-color: rgb(234 240 255 / 50%);
+}
+
+.level2-item:focus {
+  outline: 2px solid var(--nec-blue);
+  outline-offset: 2px;
+}
+
+.level2-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.level3-item:hover {
+  background-color: rgb(234 240 255 / 50%);
+}
+
+.level3-item:focus {
+  outline: 2px solid var(--nec-blue);
+  outline-offset: 2px;
+}
+
+.level3-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.level4-item:hover {
+  background-color: rgb(234 240 255 / 50%);
+}
+
+.level4-item:focus {
+  outline: 2px solid var(--nec-blue);
+  outline-offset: 2px;
+}
+
+.level4-item:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Pseudo-element selectors */
+.level3-item.has-level4::after {
+  content: '>';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--nec-gray-7);
+}
+
+/* Active states - Most specific selectors last */
+.level2-item.active {
+  background: var(--nec-sky-10);
+  border-radius: 8px;
+}
+
+.level2-item.active a {
+  color: var(--nec-blue);
+}
+
+.level2-item.active span {
+  color: var(--nec-blue);
+}
+
+.level3-item.active {
+  background: var(--nec-sky-10);
+  border-radius: 8px;
+}
+
+.level3-item.active a {
+  color: var(--nec-blue);
+}
+
+.level3-item.active span {
+  color: var(--nec-blue);
+}
+
+.level3-item.active.has-level4::after {
+  color: var(--nec-blue);
+}
+
+/* Responsive Design */
+@media (width >= 900px) {
+  .mega-content {
+    min-height: 400px;
+  }
+}
+
+@media (width <= 900px) {
+  .mega-content {
+    display: none !important;
+  }
+} 
