@@ -229,7 +229,7 @@
         "label": "Title",
         "fields": [
           {
-            "component": "text",
+            "component": "title",
             "valueType": "string",
             "name": "title",
             "label": "Title"

@@ -1,0 +1,88 @@
+/* Service Navigation Styles */
+.service-nav {
+    position: relative;
+    display: inline-block;
+}
+
+/* Service Navigation Title */
+.service-nav-title {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: var(--background-color);
+    border: 1px solid var(--nec-gray-20);
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.service-nav-title:hover {
+    background-color: var(--nec-sky-30);
+}
+
+.service-nav-title.active {
+    background-color: var(--nec-sky-25);
+    border-color: var(--nec-blue);
+}
+
+/* Service Navigation Body - Simple dropdown */
+.service-nav-body {
+    position: absolute;
+    top: calc(var(--nav-height) + 8px);
+    right: 0; /* Align with title right edge */
+    width: 320px;
+    padding: 10px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    border-radius: 8px;
+    background: #fff;
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 20px; /* 142.857% */
+}
+
+.service-nav-body.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.service-nav-body h1,
+.service-nav-body h2,
+.service-nav-body h3,
+.service-nav-body h4,
+.service-nav-body h5,
+.service-nav-body h6 {
+    font-size: 14px;
+    color: var(--nec-gray-10);
+    font-weight: 600;
+}
+
+.service-nav-body p {
+    color: var(--nec-gray-7);
+    font-weight: 400;
+}
+
+.service-nav-body ul {
+    list-style-type: none;
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 0;
+}
+
+.service-nav-body li {
+    color: var(--nec-gray-10);
+    padding: 10px 16px;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.service-nav-body li:hover {
+    color: var(--nec-blue);
+    background-color: var(--nec-sky-25);
+}
+
+.service-nav-body li a:hover {
+    text-decoration: none;
+}
