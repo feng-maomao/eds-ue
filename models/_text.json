@@ -13,28 +13,5 @@
       }
     }
   ],
-  "models": [
-    {
-      "id": "text",
-      "fields": [
-        {
-          "component": "text",
-          "name": "id",
-          "label": "Identifier",
-          "description": "The identifier for this text block"
-        },
-        {
-          "component": "multiselect",
-          "name": "style",
-          "label": "Style",
-          "options": [
-            {
-              "name": "Hidden",
-              "value": "hidden"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "models": []
 }

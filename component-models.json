@@ -81,28 +81,6 @@
     ]
   },
   {
-    "id": "text",
-    "fields": [
-      {
-        "component": "text",
-        "name": "id",
-        "label": "Identifier",
-        "description": "The identifier for this text block"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
-        "options": [
-          {
-            "name": "Hidden",
-            "value": "hidden"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "button",
     "fields": [
       {
@@ -158,6 +136,10 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Hidden",
+            "value": "hidden"
           }
         ]
       }
