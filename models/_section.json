@@ -54,7 +54,8 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "service-nav"
       ]
     }
   ]

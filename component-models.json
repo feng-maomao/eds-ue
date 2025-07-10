@@ -218,5 +218,30 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "service-nav",
+    "fields": [
+      {
+        "component": "container",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "fields": [
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "title",
+            "label": "Title"
+          },
+          {
+            "component": "richtext",
+            "valueType": "string",
+            "name": "description",
+            "label": "Description"
+          }
+        ]
+      }
+    ]
   }
 ]
