@@ -18,7 +18,7 @@
     background-color: var(--nec-sky-30);
 }
 
-.service-nav-title.active {
+.service-nav-title[aria-expanded="true"] {
     background-color: var(--nec-sky-25);
     border-color: var(--nec-blue);
 }

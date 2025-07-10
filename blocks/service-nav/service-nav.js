@@ -6,12 +6,21 @@ export default function decorate(block) {
   titleDiv.classList.add('service-nav-title');
   bodyDiv.classList.add('service-nav-body');
 
+  // Make title focusable for accessibility and focusout events
+  titleDiv.setAttribute('tabindex', '0');
+  titleDiv.setAttribute('role', 'button');
+  titleDiv.setAttribute('aria-expanded', 'false');
+  titleDiv.setAttribute('aria-haspopup', 'true');
+
   // Wrap body content
   const bodyContent = document.createElement('div');
   bodyContent.classList.add('service-nav-body-content');
   bodyContent.innerHTML = bodyDiv.innerHTML;
   bodyDiv.innerHTML = '';
   bodyDiv.appendChild(bodyContent);
+
+  // Make body content focusable for better focus management
+  bodyContent.setAttribute('tabindex', '-1');
 
   // Initially hide the body
   bodyDiv.style.display = 'none';
@@ -20,22 +29,11 @@ export default function decorate(block) {
   // Close body
   const closeBody = () => {
     bodyDiv.classList.remove('show');
-    titleDiv.classList.remove('active');
+    titleDiv.setAttribute('aria-expanded', 'false');
 
-    setTimeout(() => {
-      bodyDiv.style.display = 'none';
-    }, 300);
+    bodyDiv.style.display = 'none';
 
     isOpen = false;
-    // eslint-disable-next-line no-use-before-define
-    document.removeEventListener('click', handleClickOutside);
-  };
-
-  // Handle click outside
-  const handleClickOutside = (event) => {
-    if (!block.contains(event.target)) {
-      closeBody();
-    }
   };
 
   // Set CSS custom property for header positioning
@@ -51,7 +49,7 @@ export default function decorate(block) {
   const openBody = () => {
     updateHeaderPosition();
     bodyDiv.style.display = 'block';
-    titleDiv.classList.add('active');
+    titleDiv.setAttribute('aria-expanded', 'true');
 
     // Trigger animation
     requestAnimationFrame(() => {
@@ -59,11 +57,6 @@ export default function decorate(block) {
     });
 
     isOpen = true;
-
-    // Add click outside listener
-    setTimeout(() => {
-      document.addEventListener('click', handleClickOutside);
-    }, 100);
   };
 
   // Toggle function
@@ -88,6 +81,15 @@ export default function decorate(block) {
     toggleBody();
   });
 
+  // Add keyboard support for accessibility
+  titleDiv.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleBody();
+    }
+  });
+
   // Handle window resize for repositioning
   window.addEventListener('resize', handleResize);
 
@@ -98,11 +100,17 @@ export default function decorate(block) {
     }
   });
 
-  // Cleanup function for removing event listeners
-  block.cleanup = () => {
-    document.removeEventListener('click', handleClickOutside);
-    window.removeEventListener('resize', handleResize);
-  };
+  window.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape') {
+      closeBody();
+    }
+  });
+
+  block.addEventListener('focusout', (e) => {
+    if (isOpen && !block.contains(e.relatedTarget)) {
+      closeBody();
+    }
+  });
 
   // Clear and append elements
   block.textContent = '';

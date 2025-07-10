@@ -333,9 +333,6 @@ class MobileNav {
   navigateToLevel(item) {
     if (!item.children || item.children.length === 0) return;
 
-    // Set navigation flag
-    this.isNavigating = true;
-
     // Add current item to navigation stack
     this.navigationStack.push(item);
 
@@ -345,12 +342,6 @@ class MobileNav {
 
     // Re-render with animation
     this.renderCurrentLevel();
-    this.animateTransition('forward');
-
-    // Clear navigation flag after animation
-    setTimeout(() => {
-      this.isNavigating = false;
-    }, 350);
   }
 
   navigateBack() {
@@ -359,9 +350,6 @@ class MobileNav {
       this.hide();
       return;
     }
-
-    // Set navigation flag
-    this.isNavigating = true;
 
     // Remove last item from stack
     this.navigationStack.pop();
@@ -380,22 +368,6 @@ class MobileNav {
 
     // Re-render with animation
     this.renderCurrentLevel();
-    this.animateTransition('backward');
-
-    // Clear navigation flag after animation
-    setTimeout(() => {
-      this.isNavigating = false;
-    }, 350);
-  }
-
-  animateTransition(direction) {
-    // Add transition classes for animation
-    this.mobileNavContainer.classList.add(`transitioning-${direction}`);
-
-    // Remove transition class after animation
-    setTimeout(() => {
-      this.mobileNavContainer.classList.remove(`transitioning-${direction}`);
-    }, 300);
   }
 
   show() {
@@ -408,10 +380,7 @@ class MobileNav {
     this.renderCurrentLevel();
     this.mobileNavContainer.style.display = 'block';
 
-    // Add show animation
-    setTimeout(() => {
-      this.mobileNavContainer.classList.add('show');
-    }, 10);
+    this.mobileNavContainer.classList.add('show');
   }
 
   hide() {
@@ -428,10 +397,7 @@ class MobileNav {
       this.restoreOriginalHeader();
     }
 
-    // Hide after animation
-    setTimeout(() => {
-      this.mobileNavContainer.style.display = 'none';
-    }, 300);
+    this.mobileNavContainer.style.display = 'none';
   }
 
   /**

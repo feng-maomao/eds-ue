@@ -42,6 +42,15 @@ function closeOnFocusLost(e) {
       }
     }
   }
+  if (e.relatedTarget?.hasAttribute('aria-haspopup')) {
+    if (isDesktop.matches) {
+    // Close mega menu on desktop
+      const megaMenu = nav.querySelector('mega-menu');
+      if (megaMenu) {
+        megaMenu.closeMenus();
+      }
+    }
+  }
 }
 
 /**
@@ -55,12 +64,6 @@ function toggleMenu(nav, forceExpanded = null) {
     : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
 
-  // Safety check for button existence
-  if (!button) {
-    console.warn('Hamburger button not found');
-    return;
-  }
-
   // Check if we should use mobile nav component
   if (!isDesktop.matches && mobileNavInstance) {
     if (expanded) {
@@ -73,7 +76,7 @@ function toggleMenu(nav, forceExpanded = null) {
 
     // Update nav attributes
     nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    button.setAttribute(
+    button?.setAttribute(
       'aria-label',
       expanded ? 'Open navigation' : 'Close navigation',
     );
@@ -88,7 +91,7 @@ function toggleMenu(nav, forceExpanded = null) {
 
   // Desktop behavior - standard navigation
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  button.setAttribute(
+  button?.setAttribute(
     'aria-label',
     expanded ? 'Open navigation' : 'Close navigation',
   );
@@ -145,9 +148,9 @@ export default async function decorate(block) {
   if (navSections) {
     const navigationData = await parseHeadingStructure(navSections);
     const megaMenu = new MegaMenu(navigationData, navSections);
-    nav.appendChild(megaMenu);
     // Clear the raw section content, will be recreated by MegaMenu once added to the DOM
     navSections.textContent = '';
+    navSections.appendChild(megaMenu);
 
     // Initialize mobile navigation with the same data and nav sections element
     mobileNavInstance = new MobileNav(navigationData, navSections);

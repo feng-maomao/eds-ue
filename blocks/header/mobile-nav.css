@@ -165,18 +165,6 @@ header nav .nav-brand:has(.mobile-nav-back-btn) {
   flex-shrink: 1;
 }
 
-
-/* Transition animations */
-.mobile-nav-container.transitioning-forward {
-  transform: translateX(-10px);
-  opacity: 0.8;
-}
-
-.mobile-nav-container.transitioning-backward {
-  transform: translateX(10px);
-  opacity: 0.8;
-}
-
 /* Responsive adjustments */
 @media (width <= 480px) {
   .mobile-nav-items {
