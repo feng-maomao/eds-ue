@@ -42,15 +42,6 @@ function closeOnFocusLost(e) {
       }
     }
   }
-  if (e.relatedTarget?.hasAttribute('aria-haspopup')) {
-    if (isDesktop.matches) {
-    // Close mega menu on desktop
-      const megaMenu = nav.querySelector('mega-menu');
-      if (megaMenu) {
-        megaMenu.closeMenus();
-      }
-    }
-  }
 }
 
 /**
