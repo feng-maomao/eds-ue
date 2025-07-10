@@ -39,11 +39,5 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "service-nav",
-    "components": [
-      "text-input"
-    ]
   }
 ]

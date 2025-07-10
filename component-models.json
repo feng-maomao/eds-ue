@@ -223,24 +223,15 @@
     "id": "service-nav",
     "fields": [
       {
-        "component": "container",
+        "component": "text",
+        "name": "icon",
+        "label": "Icon"
+      },
+      {
+        "component": "richtext",
         "valueType": "string",
-        "name": "title",
-        "label": "Title",
-        "fields": [
-          {
-            "component": "title",
-            "valueType": "string",
-            "name": "title",
-            "label": "Title"
-          },
-          {
-            "component": "richtext",
-            "valueType": "string",
-            "name": "description",
-            "label": "Description"
-          }
-        ]
+        "name": "body",
+        "label": "Body"
       }
     ]
   }
