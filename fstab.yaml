@@ -3,5 +3,4 @@ mountpoints:
     url: "https://author-p105954-e1700076.adobeaemcloud.com/bin/franklin.delivery/feng-maomao/eds-ue/main"
     type: "markup"
     suffix: ".html"
-  /doc-based/:
-    url: "https://drive.google.com/drive/u/0/folders/1rdSn1fqSThli4w4ZcqGvkGfzpNeIU1BI"
+  /doc-based/: "https://drive.google.com/drive/u/0/folders/1rdSn1fqSThli4w4ZcqGvkGfzpNeIU1BI"
