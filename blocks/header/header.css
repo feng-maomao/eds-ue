@@ -13,6 +13,7 @@ header .nav-wrapper {
   padding: 0 80px;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid var(--nec-gray-2);
 }
 
 header nav {
