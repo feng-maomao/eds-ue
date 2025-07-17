@@ -1,15 +1,15 @@
 import {
-  loadHeader,
-  loadFooter,
+  decorateBlocks,
   decorateButtons,
   decorateIcons,
   decorateSections,
-  decorateBlocks,
   decorateTemplateAndTheme,
-  waitForFirstImage,
+  loadCSS,
+  loadFooter,
+  loadHeader,
   loadSection,
   loadSections,
-  loadCSS,
+  waitForFirstImage,
 } from './aem.js';
 
 /**
@@ -110,6 +110,54 @@ async function loadEager(doc) {
 }
 
 /**
+ * Loads RUM (Real Use Monitoring) script after LCP for optimal performance.
+ */
+function loadRUM() {
+  const script = document.createElement('script');
+  script.defer = true;
+  script.type = 'text/javascript';
+  script.src = 'https://rum.hlx.page/.rum/@adobe/helix-rum-js@^2/dist/rum-standalone.js';
+  document.head.appendChild(script);
+}
+
+/**
+ * Loads RUM after Largest Contentful Paint (LCP) event for better performance.
+ * Falls back to a timeout if LCP doesn't fire within 4 seconds.
+ */
+function loadRUMAfterLCP() {
+  let lcpFired = false;
+
+  // Try to detect LCP using PerformanceObserver
+  if ('PerformanceObserver' in window) {
+    try {
+      const observer = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1];
+
+        if (lastEntry && !lcpFired) {
+          lcpFired = true;
+          observer.disconnect();
+          loadRUM();
+        }
+      });
+
+      observer.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch (e) {
+      // Fallback if PerformanceObserver fails
+      setTimeout(loadRUM, 2000);
+    }
+  }
+
+  // Fallback timeout in case LCP doesn't fire within 4 seconds
+  setTimeout(() => {
+    if (!lcpFired) {
+      lcpFired = true;
+      loadRUM();
+    }
+  }, 4000);
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
@@ -126,6 +174,9 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+
+  // Load RUM after LCP for optimal performance
+  loadRUMAfterLCP();
 }
 
 /**
