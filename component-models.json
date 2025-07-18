@@ -168,10 +168,9 @@
     "id": "carousel",
     "fields": [
       {
-        "component": "media",
-        "name": "carouselItems",
-        "label": "Carousel Media",
-        "multi": true
+        "component": "container",
+        "label": "Media Container",
+        "name": "mediaContainer"
       }
     ]
   },

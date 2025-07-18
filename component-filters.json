@@ -28,6 +28,12 @@
     ]
   },
   {
+    "id": "carousel",
+    "components": [
+      "media"
+    ]
+  },
+  {
     "id": "columns",
     "components": [
       "column"
