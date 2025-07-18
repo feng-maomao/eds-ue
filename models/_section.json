@@ -55,7 +55,9 @@
         "cards",
         "columns",
         "fragment",
-        "service-nav"
+        "service-nav",
+        "media",
+        "carousel"
       ]
     }
   ]

@@ -16,7 +16,9 @@
       "cards",
       "columns",
       "fragment",
-      "service-nav"
+      "service-nav",
+      "media",
+      "carousel"
     ]
   },
   {
@@ -37,7 +39,10 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "media",
+      "carousel",
+      "columns"
     ]
   }
 ]
