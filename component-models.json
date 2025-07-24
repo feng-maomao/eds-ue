@@ -235,13 +235,6 @@
         "name": "mediaAlt",
         "label": "Media Alt Text",
         "required": true
-      },
-      {
-        "component": "richtext",
-        "name": "mediaCaption",
-        "label": "Caption",
-        "valueType": "string",
-        "required": false
       }
     ]
   },
