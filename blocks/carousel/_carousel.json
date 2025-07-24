@@ -48,6 +48,25 @@
               "required": false
             }
           ]
+        },
+        {
+          "component": "select",
+          "name": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "name": "default",
+              "value": "default"
+            },
+            {
+              "name": "Full Bleed",
+              "value": "full-bleed"
+            },
+            {
+              "name": "Multiple Card",
+              "value": "multi-card"
+            }
+          ]
         }
       ]
     }
