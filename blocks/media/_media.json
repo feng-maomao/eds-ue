@@ -33,6 +33,13 @@
           "name": "mediaAlt",
           "label": "Media Alt Text",
           "required": true
+        },
+        {
+          "component": "text",
+          "name": "mediaCaption",
+          "label": "Caption",
+          "valueType": "string",
+          "required": false
         }
       ]
     }
