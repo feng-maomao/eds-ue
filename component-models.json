@@ -166,7 +166,13 @@
   },
   {
     "id": "carousel",
-    "fields": []
+    "fields": [
+      {
+        "component": "container",
+        "label": "Media Container",
+        "name": "mediaContainer"
+      }
+    ]
   },
   {
     "id": "columns",
