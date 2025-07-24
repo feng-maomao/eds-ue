@@ -170,7 +170,31 @@
       {
         "component": "container",
         "label": "Media Container",
-        "name": "mediaContainer"
+        "name": "mediaContainer",
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "valueType": "string",
+            "name": "media",
+            "label": "Image/Video",
+            "multi": false
+          },
+          {
+            "component": "text",
+            "valueType": "string",
+            "name": "mediaAlt",
+            "label": "Media Alt Text",
+            "required": true
+          },
+          {
+            "component": "richtext",
+            "name": "mediaCaption",
+            "label": "Caption",
+            "valueType": "string",
+            "required": false
+          }
+        ]
       }
     ]
   },
