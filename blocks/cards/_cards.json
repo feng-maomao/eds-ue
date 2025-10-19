@@ -48,6 +48,26 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "container",
+          "name": "secondaryLinkGroup",
+          "label": "Secondary Link Group",
+          "multi": true,
+          "fields": [
+            {
+              "component": "aem-content",
+              "name": "link",
+              "label": "Secondary Link",
+              "valueType": "string"
+            },
+            {
+              "component": "text",
+              "name": "linkText",
+              "label": "Secondary Link Text",
+              "valueType": "string"
+            }
+          ]
         }
       ]
     }
@@ -55,9 +75,7 @@
   "filters": [
     {
       "id": "cards",
-      "components": [
-        "card"
-      ]
+      "components": ["card"]
     }
   ]
 }
