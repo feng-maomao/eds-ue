@@ -179,6 +179,12 @@
             "name": "linkText",
             "label": "Secondary Link Text",
             "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "description",
+            "label": "Description",
+            "valueType": "string"
           }
         ]
       }
