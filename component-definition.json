@@ -163,7 +163,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Footer Primary Link",
                   "model": "footer-primary-link"
@@ -178,7 +178,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Footer Secondary Link",
                   "model": "footer-secondary-link"
@@ -193,7 +193,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+                "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Footer Social Media Link",
                   "model": "footer-social-media-link"
