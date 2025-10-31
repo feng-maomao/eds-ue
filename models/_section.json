@@ -57,7 +57,8 @@
         "fragment",
         "service-nav",
         "media",
-        "carousel"
+        "carousel",
+        "footer"
       ]
     }
   ]

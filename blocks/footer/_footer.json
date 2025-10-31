@@ -1,0 +1,101 @@
+{
+    "definitions": [
+        {
+            "title": "Footer",
+            "id": "footer",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block",
+                        "template": {
+                            "name": "Footer",
+                            "model": "footer"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "footer",
+            "fields": [
+                {
+                    "component": "container",
+                    "name": "primaryLinkGroup",
+                    "label": "Primary Link Group",
+                    "multi": true,
+                    "fields": [
+                        {
+                            "component": "aem-content",
+                            "name": "link",
+                            "label": "Primary Link"
+                        },
+                        {
+                            "component": "text",
+                            "name": "linkText",
+                            "label": "Primary Link Text"
+                        }
+                    ]
+                },
+                {
+                    "component": "container",
+                    "name": "secondaryLinkGroup",
+                    "label": "Secondary Link Group",
+                    "multi": true,
+                    "fields": [
+                        {
+                            "component": "aem-content",
+                            "name": "link",
+                            "label": "Secondary Link"
+                        },
+                        {
+                            "component": "text",
+                            "name": "linkText",
+                            "label": "Secondary Link Text"
+                        }
+                    ]
+                },
+                {
+                    "component": "container",
+                    "name": "socialMediaLinks",
+                    "label": "Social Media Links",
+                    "multi": true,
+                    "fields": [
+                        {
+                            "component": "reference",
+                            "name": "icon",
+                            "label": "Icon"
+                        },
+                        {
+                            "component": "text",
+                            "name": "iconAlt",
+                            "label": "Icon Alt Text"
+                        },
+                        {
+                            "component": "aem-content",
+                            "name": "link",
+                            "label": "Social Media Link"
+                        }
+                    ]
+                },
+                {
+                    "component": "reference",
+                    "name": "logo",
+                    "label": "Logo"
+                },
+                {
+                    "component": "text",
+                    "name": "logoAlt",
+                    "label": "Logo Alt Text"
+                },
+                {
+                    "component": "text",
+                    "name": "copyright",
+                    "label": "Copyright"
+                }
+            ]
+        }
+    ],
+    "filters": []
+}
