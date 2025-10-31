@@ -45,5 +45,13 @@
       "carousel",
       "columns"
     ]
+  },
+  {
+    "id": "footer",
+    "components": [
+      "footer-primary-link",
+      "footer-secondary-link",
+      "footer-social-media-link"
+    ]
   }
 ]
